@@ -12,10 +12,10 @@ const Sequelize = require('sequelize');
 // if required) of the db to connect to. `SEQUELIZE_OPTIONS` is an
 // object that can contain the properties indicated at
 // http://docs.sequelizejs.com/en/latest/api/sequelize/#new-sequelizedatabase-usernamenull-passwordnull-options
-const {DATABASE_URL, SEQUELIZE_OPTIONS} = require('../config.js');
+const {DATABASE_URL, DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, SEQUELIZE_OPTIONS} = require('../config.js');
 
 console.log(`Connecting to database at ${DATABASE_URL}`);
-const sequelize = new Sequelize(DATABASE_URL, SEQUELIZE_OPTIONS);
+const sequelize = new Sequelize(DATABASE_NAME, 'dev', DATABASE_PASSWORD, SEQUELIZE_OPTIONS);
 
 // we shouldn't initialize a new Sequelize instance anywhere else
 // in this app. if another module needs a sequelize instance, it

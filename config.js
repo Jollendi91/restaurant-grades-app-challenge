@@ -1,4 +1,5 @@
-const env = process.env.NODE_ENV || 'development'
+
+const env = process.env.NODE_ENV || 'development';
 
 // default to dev database
 const DATABASE_URL = (
@@ -18,6 +19,12 @@ module.exports = {
     // otherwise DATABASE_URl, which defaults to dev
     DATABASE_URL: env === 'test' ? TEST_DATABASE_URL : DATABASE_URL,
     // see http://docs.sequelizejs.com/en/latest/api/sequelize/#new-sequelizedatabase-usernamenull-passwordnull-options
-    SEQUELIZE_OPTIONS: {logging: env === 'test' ? false : console.log}
+    SEQUELIZE_OPTIONS: {
+      logging: env === 'test' ? false : console.log,
+      dialect: 'postgres'
+    },
+    DATABASE_NAME: env === 'test' ? process.env.TEST_DATABASE_NAME : process.env.DATABASE_NAME,
+    DATABASE_USERNAME: process.env.DATABASE_USERNAME,
+    DATABASE_PASSWORD: process.env.DATABASE_PASSWORD
 };
 

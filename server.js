@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const {PORT} = require('./config');
 const app = require('./app')
 const {sequelize} = require('./db/sequelize');
