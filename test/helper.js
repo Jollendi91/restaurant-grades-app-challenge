@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const {PORT} = require('../config');
 const {runServer, closeServer} = require('../server');
 const {sequelize} = require('../db/sequelize');
