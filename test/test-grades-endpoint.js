@@ -150,6 +150,7 @@ describe('Grades API resource', function() {
         });
     });
 
+
     describe("DELETE endpoint", function() {
         it('should delete grade', function() {
             let grade;
