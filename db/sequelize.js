@@ -15,7 +15,7 @@ const Sequelize = require('sequelize');
 const {DATABASE_URL, DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, SEQUELIZE_OPTIONS} = require('../config.js');
 
 console.log(`Connecting to database at ${DATABASE_URL}`);
-const sequelize = new Sequelize(DATABASE_NAME, 'dev', DATABASE_PASSWORD, SEQUELIZE_OPTIONS);
+const sequelize = new Sequelize(DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, SEQUELIZE_OPTIONS);
 
 // we shouldn't initialize a new Sequelize instance anywhere else
 // in this app. if another module needs a sequelize instance, it
