@@ -1,8 +1,11 @@
-require('dotenv').config();
+'use strict';
+
+const dotenv = require('dotenv');
+
+dotenv.config({path: './.env'});
 
 const {PORT} = require('./config');
-const app = require('./app')
-const {sequelize} = require('./db/sequelize');
+const app = require('./app');
 
 
 let server;

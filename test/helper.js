@@ -1,4 +1,6 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config({path: './.env'});
 
 const {PORT} = require('../config');
 const {runServer, closeServer} = require('../server');
