@@ -1,6 +1,13 @@
 language: node_js
 node_js: node
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database "test-restaurants-app";' -U postgres
+- psql -c 'create database "test-restaurants-app";' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: mL8qQSNRKE4WN0xzNqDT8qNKVaMd9f5dT3+6fPxftc1/eEhzONcGePCtkVfJfPW7BgA4JPxKpiNBrAG07bfUw4xz3SUw/6AfTUBvltyrx06OeLr2akxdNjWzimRXSVFsPXO1qxmy+U8c2o4uX7IlUuTFLs+T7JVm5BeURHaGM2ay84q87Bj+PPcYMTOcI1VySCM1gM1LZ+f8bulX3reOcB7VWDlWM9NEAH5+f4pP12YFcv4MYVE3KTbOoTvQF1s2TFMrT5XJFCIFOUXD78lesesPT7bWJJw8y3pewjvH5/6drIYRtCWlgbsBe4AU7wmpGfn+kUvbiVpAudhoX/rYFbunpapHsSL/qELsEpe7nsBMKZJ499cKL6JRACMl7WvZaswLQksmU2Y+rJeO/kgoImhT/12/19IIxfdKYtTbLOmzK7SXMRne3L7xZ0cKqAZPfYspdpzV53T2OLl2Pj1rxUANXRisHUlKz9kp4ZXo+loVxcxItlDGi0GZD0r1VXEIDvHpBrqx5ofLnMG4T/PDRP92Kc8Eyy4ov+Tb8y24ob/eD9kSpTLwRE9zg2a7tftbDz7pk+9wqjClmD4Pp6c1UU0KUH6gOaU6OfK1EapvfDVcJD4DzRcIl8Ku9f3+O5gzBCmAm+CfxFCzxI+upNhl2e8Gl2BwiX5LWOHmM34Siqs=
+  app: guarded-plains-90532
+  on:
+    repo: Jollendi91/restaurant-grades-app-challenge
